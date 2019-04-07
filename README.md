@@ -1,126 +1,129 @@
 # 课程内容
 1.	面向接口（抽象）编程的概念与好处
 2.	IOC/DI的概念与好处
-a)	inversion of control
-b)	dependency injection
+- a	inversion of control
+- b	dependency injection
 3.	AOP的概念与好处
 4.	Spring简介
 5.	Spring应用IOC/DI（重要）
-a)	xml
-b)	annotation
+- a	xml
+- b	annotation
 6.	Spring应用AOP（重要）
-a)	xml
-b)	annotation
+- a	xml
+- b	annotation
 7.	Struts2.1.6 + Spring2.5.6 + Hibernate3.3.2整合（重要）
-a)	opensessionInviewfilter（记住，解决什么问题，怎么解决）
+- a	opensessionInviewfilter（记住，解决什么问题，怎么解决）
 8.	Spring JDBC
 # 面向接口编程（面向抽象编程）
 1.	场景：用户添加
 2.	Spring_0100_AbstractOrientedProgramming
-a)	不是AOP:Aspect Oriented Programming
+- a	不是AOP:Aspect Oriented Programming
 3.	好处：灵活
 # 什么是IOC（DI），有什么好处
 1.	把自己new的东西改为由容器提供
-a)	初始化具体值
-b)	装配
+- a	初始化具体值
+- b	装配
 2.	好处：灵活装配
 # Spring简介
 1.	项目名称：Spring_0200_IOC_Introduction
 2.	环境搭建
-a)	只用IOC
+- a	只用IOC
 i.	spring.jar , jarkata-commons/commons-loggin.jar
 3.	IOC容器
-a)	实例化具体bean
-b)	动态装配
+- a	实例化具体bean
+- b	动态装配
 4.	AOP支持
-a)	安全检查
-b)	管理transaction
+- a	安全检查
+- b	管理transaction
 # Spring IOC配置与应用
 ## 1.	FAQ:不给提示：
-a)	window – preferences – myeclipse – xml – xml catalog
-b)	User Specified Entries – add
+- a	window – preferences – myeclipse – xml – xml catalog
+- b	User Specified Entries – add
 i.	Location:	D:\share\0900_Spring\soft\spring-framework-2.5.6\dist\resources\spring-beans-2.5.xsd
+
 ii.	URI:   		file:///D:/share/0900_Spring/soft/spring-framework-2.5.6/dist/resources/spring-beans-2.5.xsd
+
 iii.	Key Type:	Schema Location
+
 iv.	Key:		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
 ## 2.	注入类型
-a)	Spring_0300_IOC_Injection_Type
-b)	setter（重要）
-c)	构造方法（可以忘记）
-d)	接口注入（可以忘记）
+- a	Spring_0300_IOC_Injection_Type
+- b	setter（重要）
+- c	构造方法（可以忘记）
+- d	接口注入（可以忘记）
 ## 3.	id vs. name
-a)	Spring_0400_IOC_Id_Name
-b)	name可以用特殊字符
+- a	Spring_0400_IOC_Id_Name
+- b	name可以用特殊字符
 ## 4.	简单属性的注入
-a)	Spring_0500_IOC_SimpleProperty
-b)	<property name=… value=….>
+- a	Spring_0500_IOC_SimpleProperty
+- b	<property name=… value=….>
 ## 5.	<bean 中的scope属性
-a)	Spring_0600_IOC_Bean_Scope
-b)	singleton 单例
-c)	proptotype 每次创建新的对象
+- a	Spring_0600_IOC_Bean_Scope
+- b	singleton 单例
+- c	proptotype 每次创建新的对象
 ## 6.	集合注入
-a)	Spring_0700_IOC_Collections
-b)	很少用，不重要！参考程序
+- a	Spring_0700_IOC_Collections
+- b	很少用，不重要！参考程序
 ## 7.	自动装配
-a)	Spring_0800_IOC_AutoWire
-b)	byName
-c)	byType
-d)	如果所有的bean都用同一种，可以使用beans的属性：default-autowire
+- a	Spring_0800_IOC_AutoWire
+- b	byName
+- c	byType
+- d	如果所有的bean都用同一种，可以使用beans的属性：default-autowire
 ## 8.	生命周期
-a)	Spring_0900_IOC_Life_Cycle
-b)	lazy-init (不重要)
-c)	init-method destroy-methd 不要和prototype一起用（了解）
+- a	Spring_0900_IOC_Life_Cycle
+- b	lazy-init (不重要)
+- c	init-method destroy-methd 不要和prototype一起用（了解）
 ## 9.	Annotation第一步：
-a)	修改xml文件，参考文档<context:annotation-config />
+- a	修改xml文件，参考文档<context:annotation-config />
 ## 10.	@Autowired
-a)	默认按类型by type
-b)	如果想用byName，使用@Qulifier
-c)	写在private field（第三种注入形式）（不建议，破坏封装）
-d)	如果写在set上，@qualifier需要写在参数上
+- a	默认按类型by type
+- b	如果想用byName，使用@Qulifier
+- c	写在private field（第三种注入形式）（不建议，破坏封装）
+- d	如果写在set上，@qualifier需要写在参数上
 ## 11.	@Resource（重要）
-a)	加入：j2ee/common-annotations.jar
-b)	默认按名称，名称找不到，按类型
-c)	可以指定特定名称
-d)	推荐使用
-e)	不足：如果没有源码，就无法运用annotation，只能使用xml
+- a	加入：j2ee/common-annotations.jar
+- b	默认按名称，名称找不到，按类型
+- c	可以指定特定名称
+- d	推荐使用
+- e	不足：如果没有源码，就无法运用annotation，只能使用xml
 ## 12.	@Component @Service @Controller @Repository
-a)	初始化的名字默认为类名首字母小写
-b)	可以指定初始化bean的名字
+- a	初始化的名字默认为类名首字母小写
+- b	可以指定初始化bean的名字
 ## 13.	@Scope
 ## 14.	@PostConstruct = init-method; @PreDestroy = destroy-method;
 
 # 什么是AOP
 ## 1.	面向切面编程Aspect-Oriented-Programming
-a)	是对面向对象的思维方式的有力补充
+- a	是对面向对象的思维方式的有力补充
 ## 2.	Spring_1400_AOP_Introduction
 ## 3.	好处：可以动态的添加和删除在切面上的逻辑而不影响原来的执行代码
-a)	Filter
-b)	Struts2的interceptor
+- a	Filter
+- b	Struts2的interceptor
 ## 4.	概念：
-a)	JoinPoint  释意:切面与原方法交接点 即 切入点
-b)	PointCut  释意:切入点集合
-c)	Aspect（切面）释意:可理解为代理类前说明
-d)	Advice 释意:可理解为代理方法前说明 例如@Before
-e)	Target  释意:被代理对象 被织入对象
-f)	Weave  释意:织入
+- a	JoinPoint  释意:切面与原方法交接点 即 切入点
+- b	PointCut  释意:切入点集合
+- c	Aspect（切面）释意:可理解为代理类前说明
+- d	Advice 释意:可理解为代理方法前说明 例如@Before
+- e	Target  释意:被代理对象 被织入对象
+- f	Weave  释意:织入
 # Spring AOP配置与应用
 ## 1.	两种方式：
-a)	使用Annotation
-b)	使用xml
+- a	使用Annotation
+- b	使用xml
 ## 2.	Annotation
-a)	加上对应的xsd文件spring-aop.xsd
-b)	beans.xml <aop:aspectj-autoproxy />
-c)	此时就可以解析对应的Annotation了
-d)	建立我们的拦截类
-e)	用@Aspect注解这个类
-f)	建立处理方法
-g)	用@Before来注解方法
-h)	写明白切入点（execution …….）
-i)	让spring对我们的拦截器类进行管理@Component
+- a	   加上对应的xsd文件spring-aop.xsd
+- b	   beans.xml <aop:aspectj-autoproxy />
+- c	   此时就可以解析对应的Annotation了
+- d	   建立我们的拦截类
+- e	   用@Aspect注解这个类
+- f	   建立处理方法
+- g	   用@Before来注解方法
+- h	   写明白切入点（execution …….）
+- i    让spring对我们的拦截器类进行管理@Component
 ## 3.	常见的Annotation:
-a)	@Pointcut  切入点声明 以供其他方法使用 , 例子如下:
+- a	@Pointcut  切入点声明 以供其他方法使用 , 例子如下:
 
-```
+```(java)
 @Aspect
 @Component
 public class LogInterceptor {
@@ -142,27 +145,30 @@ public class LogInterceptor {
 		System.out.println("method end");
 	}
 		}
-```java
-b)	@Before 发放执行之前织入
-c)	@AfterReturning 方法正常执行完返回之后织入(无异常)
-d)	@AfterThrowing 方法抛出异常后织入
-e)	@After 类似异常的finally 
-f)	@Around 环绕 类似filter , 如需继续往下执行则需要像filter中执行FilterChain.doFilter(..)对象一样 执行 ProceedingJoinPoint.proceed()方可,例子如下:
+```
+- b	@Before 发放执行之前织入
+- c	@AfterReturning 方法正常执行完返回之后织入(无异常)
+- d	@AfterThrowing 方法抛出异常后织入
+- e	@After 类似异常的finally 
+- f	@Around 环绕 类似filter , 如需继续往下执行则需要像filter中执行FilterChain.doFilter(..)对象一样 执行 ProceedingJoinPoint.proceed()方可,例子如下:
+```(java)
 @Around("execution(* com.bjsxt.dao..*.*(..))")
 		public void before(ProceedingJoinPoint pjp) throws Throwable{
 				System.out.println("method start");
 				pjp.proceed();//类似FilterChain.doFilter(..)告诉jvm继续向下执行
 }
+```
 ## 4.	织入点语法
-a)	void !void
-b)	参考文档（* ..）
+- a	void !void
+- b	参考文档（* ..）
 如果 execution(* com.bjsxt.dao..*.*(..))中声明的方法不是接口实现 则无法使用AOP实现动态代理,此时可引入包” cglib-nodep-2.1_3.jar” 后有spring自动将普通类在jvm中编译为接口实现类,从而打到可正常使用AOP的目的.
 ## 5.	xml配置AOP
-a)	把interceptor对象初始化
-b)	<aop:config
+- a	把interceptor对象初始化
+- b	<aop:config
 i.	<aop:aspect …..
 1.	<aop:pointcut
 2.	<aop:before
+```(xml)
 例子：
 <bean id="logInterceptor" class="com.bjsxt.aop.LogInterceptor"></bean>
 	<aop:config>
@@ -189,22 +195,23 @@ i.	<aop:aspect …..
 				pointcut="execution(public * om.bjsxt.service..*.*(..))" />
 		</aop:aspect>
 </aop:config>
+```
 Spring整合Hibernate
 1.	Spring 指定datasource
-a)	参考文档，找dbcp.BasicDataSource
+- a	参考文档，找dbcp.BasicDataSource
 i.	c3p0
 ii.	dbcp
 iii.	proxool
-b)	在DAO或者Service中注入dataSource
-c)	在Spring中可以使用PropertyPlaceHolderConfigure来读取Properties文件的内容
+- b	在DAO或者Service中注入dataSource
+- c	在Spring中可以使用PropertyPlaceHolderConfigure来读取Properties文件的内容
 2.	Spring整合Hibernate
-a)	<bean .. AnnotationSessionFactoryBean>
+- a	<bean .. AnnotationSessionFactoryBean>
 i.	<property dataSource
 ii.	<annotatedClasses
-b)	引入hibernate 系列jar包
-c)	User上加Annotation
-d)	UserDAO或者UserServie 注入SessionFactory
-e)	jar包问题一个一个解决
+- b	引入hibernate 系列jar包
+- c	User上加Annotation
+- d	UserDAO或者UserServie 注入SessionFactory
+- e	jar包问题一个一个解决
 3.	声明式的事务管理
 a)	事务加在DAO层还是Service层？
 b)	annotation
@@ -503,7 +510,7 @@ b.
 Action中也可不加@Component，Action由struts2-spring-plugin管理。此时，如果Action中定义的属性有set方法 则@Autowired 与@Resource也可不写，但是如果没有set方法，则需要在属性前加上@Autowired 或@Resource才能生效。
 
 
-	3．
+3．
 Hibernate如果使用load来查询数据，例如：
 Service中：
 public User loadById(int id) {
@@ -607,4 +614,3 @@ freemarker-2.3.16.jar       　　　　　strut2用，一种模版技术
 struts2-core-2.2.3.1.jar     　　　　　struts2核心 
 struts2-spring-plugin-2.2.3.1.jar      struts2支持spring       
 xwork-core-2.2.3.1.jar     　　　　　xwork支持 这个包的版本必需在2.1.6或以上，如果是2.1.4会报错（少一些类）
-
