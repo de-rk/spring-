@@ -1,4 +1,4 @@
-课程内容
+# 课程内容
 1.	面向接口（抽象）编程的概念与好处
 2.	IOC/DI的概念与好处
 a)	inversion of control
@@ -14,17 +14,17 @@ b)	annotation
 7.	Struts2.1.6 + Spring2.5.6 + Hibernate3.3.2整合（重要）
 a)	opensessionInviewfilter（记住，解决什么问题，怎么解决）
 8.	Spring JDBC
-面向接口编程（面向抽象编程）
+# 面向接口编程（面向抽象编程）
 1.	场景：用户添加
 2.	Spring_0100_AbstractOrientedProgramming
 a)	不是AOP:Aspect Oriented Programming
 3.	好处：灵活
-什么是IOC（DI），有什么好处
+# 什么是IOC（DI），有什么好处
 1.	把自己new的东西改为由容器提供
 a)	初始化具体值
 b)	装配
 2.	好处：灵活装配
-Spring简介
+# Spring简介
 1.	项目名称：Spring_0200_IOC_Introduction
 2.	环境搭建
 a)	只用IOC
@@ -35,79 +35,79 @@ b)	动态装配
 4.	AOP支持
 a)	安全检查
 b)	管理transaction
-Spring IOC配置与应用
-1.	FAQ:不给提示：
+# Spring IOC配置与应用
+## 1.	FAQ:不给提示：
 a)	window – preferences – myeclipse – xml – xml catalog
 b)	User Specified Entries – add
 i.	Location:	D:\share\0900_Spring\soft\spring-framework-2.5.6\dist\resources\spring-beans-2.5.xsd
 ii.	URI:   		file:///D:/share/0900_Spring/soft/spring-framework-2.5.6/dist/resources/spring-beans-2.5.xsd
 iii.	Key Type:	Schema Location
 iv.	Key:		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
-2.	注入类型
+## 2.	注入类型
 a)	Spring_0300_IOC_Injection_Type
 b)	setter（重要）
 c)	构造方法（可以忘记）
 d)	接口注入（可以忘记）
-3.	id vs. name
+## 3.	id vs. name
 a)	Spring_0400_IOC_Id_Name
 b)	name可以用特殊字符
-4.	简单属性的注入
+## 4.	简单属性的注入
 a)	Spring_0500_IOC_SimpleProperty
 b)	<property name=… value=….>
-5.	<bean 中的scope属性
+## 5.	<bean 中的scope属性
 a)	Spring_0600_IOC_Bean_Scope
 b)	singleton 单例
 c)	proptotype 每次创建新的对象
-6.	集合注入
+## 6.	集合注入
 a)	Spring_0700_IOC_Collections
 b)	很少用，不重要！参考程序
-7.	自动装配
+## 7.	自动装配
 a)	Spring_0800_IOC_AutoWire
 b)	byName
 c)	byType
 d)	如果所有的bean都用同一种，可以使用beans的属性：default-autowire
-8.	生命周期
+## 8.	生命周期
 a)	Spring_0900_IOC_Life_Cycle
 b)	lazy-init (不重要)
 c)	init-method destroy-methd 不要和prototype一起用（了解）
-9.	Annotation第一步：
+## 9.	Annotation第一步：
 a)	修改xml文件，参考文档<context:annotation-config />
-10.	@Autowired
+## 10.	@Autowired
 a)	默认按类型by type
 b)	如果想用byName，使用@Qulifier
 c)	写在private field（第三种注入形式）（不建议，破坏封装）
 d)	如果写在set上，@qualifier需要写在参数上
-11.	@Resource（重要）
+## 11.	@Resource（重要）
 a)	加入：j2ee/common-annotations.jar
 b)	默认按名称，名称找不到，按类型
 c)	可以指定特定名称
 d)	推荐使用
 e)	不足：如果没有源码，就无法运用annotation，只能使用xml
-12.	@Component @Service @Controller @Repository
+## 12.	@Component @Service @Controller @Repository
 a)	初始化的名字默认为类名首字母小写
 b)	可以指定初始化bean的名字
-13.	@Scope
-14.	@PostConstruct = init-method; @PreDestroy = destroy-method;
+## 13.	@Scope
+## 14.	@PostConstruct = init-method; @PreDestroy = destroy-method;
 
-什么是AOP
-1.	面向切面编程Aspect-Oriented-Programming
+# 什么是AOP
+## 1.	面向切面编程Aspect-Oriented-Programming
 a)	是对面向对象的思维方式的有力补充
-2.	Spring_1400_AOP_Introduction
-3.	好处：可以动态的添加和删除在切面上的逻辑而不影响原来的执行代码
+## 2.	Spring_1400_AOP_Introduction
+## 3.	好处：可以动态的添加和删除在切面上的逻辑而不影响原来的执行代码
 a)	Filter
 b)	Struts2的interceptor
-4.	概念：
+## 4.	概念：
 a)	JoinPoint  释意:切面与原方法交接点 即 切入点
 b)	PointCut  释意:切入点集合
 c)	Aspect（切面）释意:可理解为代理类前说明
 d)	Advice 释意:可理解为代理方法前说明 例如@Before
 e)	Target  释意:被代理对象 被织入对象
 f)	Weave  释意:织入
-Spring AOP配置与应用
-1.	两种方式：
+# Spring AOP配置与应用
+## 1.	两种方式：
 a)	使用Annotation
 b)	使用xml
-2.	Annotation
+## 2.	Annotation
 a)	加上对应的xsd文件spring-aop.xsd
 b)	beans.xml <aop:aspectj-autoproxy />
 c)	此时就可以解析对应的Annotation了
@@ -117,9 +117,10 @@ f)	建立处理方法
 g)	用@Before来注解方法
 h)	写明白切入点（execution …….）
 i)	让spring对我们的拦截器类进行管理@Component
-3.	常见的Annotation:
+## 3.	常见的Annotation:
 a)	@Pointcut  切入点声明 以供其他方法使用 , 例子如下:
 
+```
 @Aspect
 @Component
 public class LogInterceptor {
@@ -141,7 +142,7 @@ public class LogInterceptor {
 		System.out.println("method end");
 	}
 		}
-
+```java
 b)	@Before 发放执行之前织入
 c)	@AfterReturning 方法正常执行完返回之后织入(无异常)
 d)	@AfterThrowing 方法抛出异常后织入
@@ -152,11 +153,11 @@ f)	@Around 环绕 类似filter , 如需继续往下执行则需要像filter中�
 				System.out.println("method start");
 				pjp.proceed();//类似FilterChain.doFilter(..)告诉jvm继续向下执行
 }
-4.	织入点语法
+## 4.	织入点语法
 a)	void !void
 b)	参考文档（* ..）
 如果 execution(* com.bjsxt.dao..*.*(..))中声明的方法不是接口实现 则无法使用AOP实现动态代理,此时可引入包” cglib-nodep-2.1_3.jar” 后有spring自动将普通类在jvm中编译为接口实现类,从而打到可正常使用AOP的目的.
-5.	xml配置AOP
+## 5.	xml配置AOP
 a)	把interceptor对象初始化
 b)	<aop:config
 i.	<aop:aspect …..
