@@ -7,3 +7,9 @@
 
 ```java
 map1.put ("map1" ,new int[]{7788,7369});
+```
+
+<code>分页查询,不要再搞忘了</code>
+```sql
+-- 从大于(2-1)*3开始 ,到 <=(2*3)结束
+select * from(select a.*,ROWNUM rn from(select * from emp) a where ROWNUM<=(2*3)) where rn>(2-1)*3
